@@ -5,6 +5,6 @@ import { IAuthRepository } from "./auth.interface";
 export class AuthRepository implements IAuthRepository {
 
     getHello(): string {
-        return'Hello World!';
+        return'Hello World! - Repo for business logic';
     }
 }
