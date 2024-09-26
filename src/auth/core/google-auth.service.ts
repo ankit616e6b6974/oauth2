@@ -23,7 +23,6 @@ export class GoogleAuthService {
       config.SCOPE_CONTACTS,
       config.SCOPE_EMAIL,
       config.SCOPE_PROFILE,
-      config.SCOPE_YOUTUBE,
     ];
 
     this.authUrl = this.oauth2Client.generateAuthUrl({

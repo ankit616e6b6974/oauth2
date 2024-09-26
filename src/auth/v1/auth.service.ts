@@ -18,4 +18,8 @@ export class AuthService {
   googleLogin(): any {
     return this.AuthRepository.getHello();
   }
+
+  googleAuthUrl(): any {
+    return this.GoogleAuthService.getAuthUrl();
+  }
 }

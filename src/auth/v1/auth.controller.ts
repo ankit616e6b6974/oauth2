@@ -14,5 +14,10 @@ export class AuthController {
   googleLogin(): any {
     return this.authService.googleLogin();
   }
+
+  @Get("google-auth-url")
+  googleAuthUrl(): any {
+    return this.authService.googleAuthUrl();
+  }
 }
 
