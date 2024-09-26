@@ -31,6 +31,23 @@ export class GoogleAuthService {
     });
   }
 
+  async getToken(code):Promise<any>{
+    return await this.oauth2Client.getToken(code);
+  }
+
+  async getUserInfo(tokens):Promise<any>{
+    const userInfo = await google.google.people('v1').people.get({
+      'personFields': 'names,emailAddresses',
+      'resourceName': 'people/me',
+    }, {
+      headers: {
+        Authorization: `Bearer ${tokens.tokens.access_token}`,
+      },
+    });
+
+    return userInfo
+  }
+
   getAuthUrl() {
     return this.authUrl;
   }

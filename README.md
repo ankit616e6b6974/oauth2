@@ -25,6 +25,9 @@
 ## Description
 Implementing OAuth2.0 with [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+Note:
+Whatever API you use make sure it is enable, in this exmaple we had yse `people` google API
+
 ## Project setup
 
 ```bash
@@ -39,22 +42,6 @@ $ npm run start
 
 # watch mode
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
 ## Resources
