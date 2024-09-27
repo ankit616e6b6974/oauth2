@@ -1,7 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { IAuthRepository } from './auth.interface';
 import { GoogleAuthService } from 'src/auth/core/google-auth.service'
-import axios from 'axios';
 
 @Injectable()
 export class AuthService {
@@ -21,9 +20,14 @@ export class AuthService {
   }
 
   async googleAuthCallback(code: string): Promise<any> {
-    const token : string = await this.GoogleAuthService.getToken(code);
-    const userinfo : any = await this.GoogleAuthService.getUserInfo(token); 
-    console.log(userinfo);
-    return userinfo;
+    try {
+      const token: string = await this.GoogleAuthService.getToken(code);
+      const userInfo: any = await this.GoogleAuthService.getUserInfo(token);
+      //console.log('Google Auth User Info:', userInfo);
+      return userInfo;
+    } catch (error) {
+      console.error('Google Auth Error:', error);
+      throw new Error('Google authentication failed');
+    }
   }
 }
